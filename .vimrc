@@ -77,3 +77,14 @@ set showcmd
 set shiftwidth=2
 set tabstop=2
 
+" ※矯正用: 矢印キーの使用を禁止する
+"
+map <Up> <Nop>
+map <Down> <Nop>
+map <Left> <Nop>
+map <Right> <Nop>
+inoremap <Up> <Nop>
+inoremap <Down> <Nop>
+inoremap <Left> <Nop>
+inoremap <Right> <Nop>
+
