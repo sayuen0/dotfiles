@@ -61,5 +61,17 @@ gcre(){
 	git push -u origin develop;
 }
 
+# 日記や学習ノートを開くSC
 alias n="note.sh"
 alias m="markdown.sh"
+alias ty="open -a typora ~/markdowns"
+alias t="open -a typora "
+
+# treeコマンドはデフォルトで日本語が文字化けするので置換
+alias tree="tree -N"
+
+# lsしたときの色付け
+alias ls='ls -G'
+export LSCOLORS=Cxfxcxdxbxegedabagacad
+
+

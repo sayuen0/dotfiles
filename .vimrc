@@ -1,12 +1,24 @@
+"VundleVimをつかう
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+  Plugin 'VundleVim/Vundle.vim'
+  Plugin 'preservim/nerdtree'
+  Plugin 'tomtom/tcomment_vim' 
+call vundle#end()
+
 filetype plugin indent on 
 
 inoremap <silent> jj <ESC>
 
+"nerdtree関連
+" control + e でツリー表示
+nnoremap <silent><C-e> :NERDTreeToggle<CR>
 syntax on
 
 " スワップファイルの作成先を変更
 set noswapfile
-
 
 " ヤンクをクリップボードへ繋ぐ
 set clipboard=unnamed
@@ -61,6 +73,7 @@ imap <C-b> <Left>
 imap <C-f> <Right>
 
 
+set encoding=UTF8
 set nowrap
 
 set hlsearch 
@@ -87,4 +100,5 @@ inoremap <Up> <Nop>
 inoremap <Down> <Nop>
 inoremap <Left> <Nop>
 inoremap <Right> <Nop>
+
 
