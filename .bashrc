@@ -1,4 +1,4 @@
-# docker 
+# docker
 alias dcp="docker-compose"
 export PGDATA='/usr/local/var/postgres'
 
@@ -12,7 +12,7 @@ eval "$(goenv init -)"
 # k8s
 alias kc="kubectl"
 
-# git 
+# git
 alias fp="git fetch && git pull"
 
 # github client のauto complete
@@ -50,7 +50,7 @@ parse_git_branch() {
 }
 export PS1="\u@\h \[\e[32m\]\w \[\e[91m\]\$(parse_git_branch)\[\e[00m\]$ "
 
-# github client funtcion 
+# github client funtcion
 gcre(){
   git init && git add . && git status && git commit - m "Initial commit"
 	echo "Type repository name:" && read name
@@ -73,5 +73,3 @@ alias tree="tree -N"
 # lsしたときの色付け
 alias ls='ls -G'
 export LSCOLORS=Cxfxcxdxbxegedabagacad
-
-

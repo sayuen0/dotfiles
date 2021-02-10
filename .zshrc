@@ -19,8 +19,8 @@ export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
 export LDFLAGS="-L/usr/local/opt/mysql@5.7/lib"
 export CPPFLAGS="-I/usr/local/opt/mysql@5.7/include"
 
-alias ls='ls -FG'
-alias ll='ls -alFG'
+alias ls='ls -FG --color'
+alias ll='ls -alFG --color'
 
 # Goenv 用の環境変数
 export GOENV_DISABLE_GOPATH=1
