@@ -102,4 +102,11 @@ inoremap <Down> <Nop>
 inoremap <Left> <Nop>
 inoremap <Right> <Nop>
 
+" vim-go関連
+" エラーを消す
+let g:go_version_warning = 0
+" Space s やSpace vでで画面を分割して定義にジャンプ
+let mapleader = "\<Space>"
 
+au FileType go nmap <leader>s <Plug>(go-def-split)
+au FileType go nmap <leader>v <Plug>(go-def-vertical)
