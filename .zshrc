@@ -19,8 +19,8 @@ export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
 export LDFLAGS="-L/usr/local/opt/mysql@5.7/lib"
 export CPPFLAGS="-I/usr/local/opt/mysql@5.7/include"
 
-alias ls='ls -FG --color'
-alias ll='ls -alFG --color'
+alias ls='ls -FG'
+alias ll='ls -alFG'
 
 # Goenv 用の環境変数
 export GOENV_DISABLE_GOPATH=1
@@ -43,8 +43,39 @@ export GO111MODULE=on
 # my own script
 export PATH="$PATH:$HOME/bin"
 alias t="task.sh"
-alias n="note.sh"
 alias ty="open -a typora ~/markdowns/"
 alias d="t"
 # history にコマンド実行時刻を記録する
 setopt extended_history
+
+# peco
+# Ctrl + R で履歴のインクリメンタルサーチ
+function peco-history-selection() {
+    BUFFER=`history -n 1 | tac  | awk '!a[$0]++' | peco`
+    CURSOR=$#BUFFER
+    zle reset-prompt
+}
+
+zle -N peco-history-selection
+bindkey '^R' peco-history-selection
+
+# ### search a destination from cdr list
+function peco-get-destination-from-cdr() {
+  cdr -l | \
+  sed -e 's/^[[:digit:]]*[[:blank:]]*//' | \
+  peco --query "$LBUFFER"
+}
+
+### search a destination from cdr list and cd the destination
+function peco-cdr() {
+  local destination="$(peco-get-destination-from-cdr)"
+  if [ -n "$destination" ]; then
+    BUFFER="cd $destination"
+    zle accept-line
+  else
+    zle reset-prompt
+  fi
+}
+zle -N peco-cdr
+bindkey '^x' peco-cdr
+
