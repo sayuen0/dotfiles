@@ -6,6 +6,7 @@ call vundle#begin()
   Plugin 'VundleVim/Vundle.vim'
   Plugin 'preservim/nerdtree'
   Plugin 'tomtom/tcomment_vim' 
+  Plugin 'fatih/vim-go'
 call vundle#end()
 
 filetype plugin indent on 
