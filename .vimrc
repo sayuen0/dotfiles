@@ -8,6 +8,7 @@ call vundle#begin()
   Plugin 'tomtom/tcomment_vim' 
   Plugin 'fatih/vim-go'
   Plugin 'easymotion/vim-easymotion'
+  Plugin 'tpope/vim-surround'
 call vundle#end()
 
 filetype plugin indent on 
@@ -91,17 +92,6 @@ set showcmd
 
 set shiftwidth=2
 set tabstop=2
-
-" ※矯正用: 矢印キーの使用を禁止する
-"
-map <Up> <Nop>
-map <Down> <Nop>
-map <Left> <Nop>
-map <Right> <Nop>
-inoremap <Up> <Nop>
-inoremap <Down> <Nop>
-inoremap <Left> <Nop>
-inoremap <Right> <Nop>
 
 " vim-go関連
 " エラーを消す

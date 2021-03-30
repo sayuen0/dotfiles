@@ -1,4 +1,6 @@
 [user]
+	name = Your Name
+	email = you@example.com
 [color]
    # colorの設定(以下のコマンドは自動で色つける)
    status = auto
